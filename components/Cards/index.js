@@ -23,14 +23,16 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         console.log(response);
         const articles = response.data.articles;
-        const articleKeys = Object.keys(articles);
+        const articleKeys = Object.keys(articles); // get each article keys
         const cardContainer = document.querySelector('.cards-container');
 
+        // Loop thru keys to access their values
         articleKeys.forEach(key => {
             let topic = articles[key];
-            // console.log(topic)
-            topic.forEach(item => {
-                cardContainer.appendChild(articleComponent(item));
+            
+            // Loop thru each topic and create a card for each article
+            topic.forEach(article => {
+                cardContainer.appendChild(articleComponent(article));
             });
         });
     })
