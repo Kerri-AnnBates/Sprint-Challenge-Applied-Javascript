@@ -36,7 +36,7 @@ function carouselComponent() {
   // Setup structure
   carouselDiv.appendChild(leftButton);
   const images = ['computer.jpeg', 'mountains.jpeg', 'trees.jpeg', 'turntable.jpeg'];
-  images.forEach((img, i) => {
+  images.forEach((img) => {
     let image = document.createElement('img');
     image.src = `./assets/carousel/${img}`;
     carouselDiv.appendChild(image);
@@ -74,6 +74,7 @@ nextBtn.addEventListener('click', (e) => {
   }
 });
 
+// Set up previous button functionality
 prevBtn.addEventListener('click', (e) => {
   currIndex--;
   // console.log(currIndex);
